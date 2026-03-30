@@ -91,3 +91,46 @@ fill() und stroke() müssen jeweils bevor eine Form gezeichnet wird festgelegt w
 
 Mit noFill() und noStroke() kann auch keine Füllfarb oder keine Kontur festgelegt werden.
 
+
+## 27.3.2026 Grundstruktur setup & draw. Systemvariablen
+[TP_2](https://einraum-design.github.io/tp_processing_SoSe2026/TP_2/index.html) [(--> Code)](https://github.com/einraum-design/tp_processing_SoSe2026/blob/main/docs/TP_2/sketch.js)
+
+
+### function setup & draw
+
+```
+function setup(){
+
+}
+
+function draw(){
+
+}
+```
+Die beiden Funktionen sind das Grundgerüst jeder Processing Anwendung.
+Alles was im Funktionsrumpf der function setup() – zwische den geschweiften Klammern steht – wird zum Programmstart einmal ausgeführt. Hier werden alles Grundeinstellungen für das Programm gesetzt und das Canvas Elemet erstellt.
+
+```
+createCanvas(600, 400);
+
+```
+
+Nach Ablauf der function setup() wird der Inhalt der function draw() ausgeführt. 
+Alles was in der function draw() steht wird immer wieder auf's Neue ausgeführt – standartmäßig 60 Mal pro Sekunde. 
+Die function draw() beginnt meistens mit der background function, die alles aus dem vorherigen Frame übermalt und für jeden neuen Frame eine neue Zeichenfläche bereitstellt.
+
+### Processing Variablen
+
+Processing bietet mehrere Variablen die von Processing vordefiniert sind.
+Diese könne einfach als Platzhalter im Skript eingesetzt werden und werden während der Laufzeit 
+des Programmes mit den aktuellen Werten ersetzt.
+
+mouseX -> Maus x - Position innerhalb vom Sketch  Zahlenwert Ganzzahlen (Integer)
+mouseY -> Maus y - Position innerhalb vom Sketch  Zahlenwert Ganzzahlen (Integer)
+width ->  Sketchbreite Zahlenwert Ganzzahlen (Integer)
+height -> Sketchhöhe Zahlenwert Ganzzahlen (Integer)
+
+
+width und height sollten verwendet werden, um Positionen von graphischen Elementen in der Anwendung unabhängig von der Fenstergröße zu berechnen.
+
+frameCount -> Zähler der nach jedem function draw Druchgang hochgezählt wird.  Zahlenwert Ganzzahlen (Integer)
