@@ -134,3 +134,43 @@ height -> Sketchhöhe Zahlenwert Ganzzahlen (Integer)
 width und height sollten verwendet werden, um Positionen von graphischen Elementen in der Anwendung unabhängig von der Fenstergröße zu berechnen.
 
 frameCount -> Zähler der nach jedem function draw Druchgang hochgezählt wird.  Zahlenwert Ganzzahlen (Integer)
+
+
+## 10.4.2026 Variablentypen & start if-Bedingungen
+- [TP 3](https://einraum-design.github.io/tp_processing_SoSe2026/TP_3/index.html) [(--> Code)](https://github.com/einraum-design/tp_processing_SoSe2026/blob/main/docs/TP_3/sketch.js)
+
+***elementaren Variablen***
+- Ganzzahlen Integers int --> 1, 3, 34, -23
+- Fließkommazahlen FloatingPointNumbers float --> 0.234, 123.234, 1.0, -234.234
+- Boolean bool --> true / false
+- Character char --> 'a', 'b', ' ', '+', '\'' (escapen von sonderzeichen über \Sonderzeichen)
+
+***Objekte***
+- Textkette String --> "Hello World", " ", "8ohasdf"
+- p5.image (PImage) Bilder
+- p5.font (PFont) Schriften
+
+Variablen Definition in den meisten Programmiersprachen
+```
+// Typ variablenNamen ( = Wert);
+int alter = 18;
+```
+
+Variabeln Definition in javascript (also auch p5js)
+```
+let myXPos = 40.0;
+let myYPos = 60;
+let xSpeed, ySpeed;
+```
+
+if-Bedingungen 
+Mit if-Bedinungen lassen sich ein Programm steuern. 
+Über Bedingungen lässt sich steuern, welche Programmteile ausgeführt werden.
+
+```
+// if-Bedingungen
+// if(CONDITION) { wenn CONDITION erfüllt ist, wird alles im Rumpf (zwischen den {}) ausgeführt}
+if(mouseX > 300){
+    ellipse(mouseX, mouseY, 50, 50);
+}
+```

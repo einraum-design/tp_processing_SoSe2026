@@ -41,7 +41,7 @@ function setup() {
   ellipseMode(CENTER);
   fill(255, 255, 0);
   // Matematische Operatoren + - * / %
-  arc(300, 100, 80, 80, 0 + 45, 360 - 45);
+  arc(300, 100, 80, 80, 0 + 45, 360 - 45, PIE);
   
   
   
