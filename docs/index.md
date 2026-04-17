@@ -174,3 +174,21 @@ if(mouseX > 300){
     ellipse(mouseX, mouseY, 50, 50);
 }
 ```
+
+Um Bedingungen mit Zahlenwerten zu formulieren gibt es ***Vergleichsoperatoren***
+- A > B  --> wenn A größer als B ist
+- A < B  --> wenn A kleiner als B ist
+- A >= B --> wenn A größer oder gleich B ist
+- A <= B --> wenn A kleiner oder gleich B ist
+- A == B --> wenn der Wert von A gleich B ist
+- A === B --> wenn der Wert von A gleich B ist und der Typ von A und B gleich ist
+- A != B --> wenn der Wert von A nicht gleich B ist
+
+
+Um mehrere Bedingung miteinander zu verbinden gibt es ***Verknüpfungsoperatoren***
+- CONDITION_A && CONDITION_B --> Wenn Bedingung A UND Bedingung B erfüllt sind
+- CONDITION_A &#124;&#124; CONDITION_B --> Wenn Bedingung A ODER Bedingung B (oder beide) erfüllt sind
+
+
+
+
