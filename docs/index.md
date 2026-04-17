@@ -175,6 +175,9 @@ if(mouseX > 300){
 }
 ```
 
+## 17.4.2026 if-Bedingungen
+- [TP 4](https://einraum-design.github.io/tp_processing_SoSe2026/TP_4/index.html) [(--> Code)](https://github.com/einraum-design/tp_processing_SoSe2026/blob/main/docs/TP_4/sketch.js)
+
 Um Bedingungen mit Zahlenwerten zu formulieren gibt es ***Vergleichsoperatoren***
 - A > B  --> wenn A größer als B ist
 - A < B  --> wenn A kleiner als B ist
