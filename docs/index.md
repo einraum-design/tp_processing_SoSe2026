@@ -227,6 +227,27 @@ else {
 }
 ```
 
+## Event Listener
+
+Soll ein Zähler je Mausklick oder Tastendruck – je Event (zB. Click) um eins hochgezählt werden, muss beachtet werden, dass der Wechsel nicht innerhalb der void draw mehrfach ausgeführt wird.
+Deshalb gibt es Event Händler, die auf bestimmte Events hin jeweils einmal ausgeführt werden. Diese stehen außerhalb der function setup() und der function draw().
+```
+// wird in dem Moment aufgerufen, wenn die Maustaste gedrückt wird.
+void mousePressed() {
+    // der Inhalt im Funktionsrumpf wird pro Maustraste drücken einmal ausgeführt.
+}
+
+void mouseReleased() {
+    // der Inhalt im Funktionsrumpf wird pro Maustaste loslassen einmal ausgeführt.
+}
+
+void keyPressed() {
+    // der Inhalt im Funktionsrumpf wird je Tastendruck einmal ausgeführt.
+}
+```
+
+Weiter Eventhandler für Maus- und TastaturEvents sind in der Referenz zu finden.
+
 ### Die random-Funktion
 Die Random Funktion git bei jedem Aufruf eine neue zufällige Zahl zurück.
 ```
