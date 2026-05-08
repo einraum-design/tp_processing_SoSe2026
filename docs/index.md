@@ -284,3 +284,27 @@ Das Zeichenkoordiantensystem lässt sich innerhalb der void draw wieder auf Stan
 ```
  resetMatrix();
 ```
+
+Mit den Funktionen push() und pop() lassen sich (mit push()) Zwischenstände der Transformationsmatrix zwischenspeichern und (mit pop()) wieder auf den Zustand zurücksetzen. 
+Wichtig: Jeder Zwischenspeicher mit push() muss wieder mit einem Aufruf von pop() aufgelöst werden. 
+
+## 8.5.2026 Transformationen Erweiterung, map funktion, Objekte
+- [TP 7](https://einraum-design.github.io/tp_processing_SoSe2026/TP_7/index.html) [(--> Code)](https://github.com/einraum-design/tp_processing_SoSe2026/blob/main/docs/TP_7/sketch.js)
+- [TP 8](https://einraum-design.github.io/tp_processing_SoSe2026/TP_8/index.html) [(--> Code)](https://github.com/einraum-design/tp_processing_SoSe2026/blob/main/docs/TP_8/sketch.js)
+
+### Objekte
+Objekte sind noch etwas allgemeiner gefasst. Hier sind die Schlüssel, um auf die einzelnen Werte von dem Objekt zugreifen zu können nicht festgelegt auf durchnummerierte Zahlen, sondern können jeder Begriff sein.
+Objekt werden über die geschweiften Klammern definiert:
+
+```
+ let myObject = {};
+```
+Schlüssel - Wert - Paare lassen sich einfach über den Punkt-Operator hinzufügen:
+```
+ let myObject = {}
+ myObject.name = "Otto";
+ myObject.alter = 43;
+
+ // oder über den Schlüssel als String ("") in eckigen Klammern hinzufügen:
+ myObject["sex"] = "male";
+```
