@@ -30,7 +30,7 @@ function draw() {
       // grün
       fill(0, 255, 0);
       // can exectute in every frame! don't call ist here!
-      //sound.play();
+      // sound.play();
     } else {
       // gelb
       fill(255, 255, 0);
