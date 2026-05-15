@@ -28,6 +28,7 @@ function draw() {
   // WEG B
   // Zustand vom Koordinatensystem (der Transformationen) zwischenspeichern
   // für jedes zwischenspeichern "push()" muss es ein "pop()" geben
+  
   push();
 
     // minute() --> 0, 60

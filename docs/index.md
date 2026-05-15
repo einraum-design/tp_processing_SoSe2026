@@ -292,6 +292,30 @@ Wichtig: Jeder Zwischenspeicher mit push() muss wieder mit einem Aufruf von pop(
 - [TP 7](https://einraum-design.github.io/tp_processing_SoSe2026/TP_7/index.html) [(--> Code)](https://github.com/einraum-design/tp_processing_SoSe2026/blob/main/docs/TP_7/sketch.js)
 - [TP 8](https://einraum-design.github.io/tp_processing_SoSe2026/TP_8/index.html) [(--> Code)](https://github.com/einraum-design/tp_processing_SoSe2026/blob/main/docs/TP_8/sketch.js)
 
+## 15.5.2026 Arrays, while-loop
+- [TP 9](https://einraum-design.github.io/tp_processing_SoSe2026/TP_9/index.html) [(--> Code)](https://github.com/einraum-design/tp_processing_SoSe2026/blob/main/docs/TP_9/sketch.js)
+
+### Arrays
+Bisher hatten wir Variablen in der Form kennengelernt, dass in jede Variable ein Wert gespeichert wird. 
+Um viele Werte unter einem Variablennamen speichern zu können verwendet man Arrays. Bei einem Array können viele Werte wie in einem Regal mit vielen Fächern abgelegt werden. Jeder Wert kann über einen Index (Zahl von 0 - n) als Schlüssel angesprochen werden.
+Arrays werden über eckige Klammern gekennzeichnet:
+
+```
+ let myArray = [];
+```
+
+Arrays mit Werten initialisieren:
+```
+ let namesArray = ["Andres", "Tina", "Philipp"];
+```
+Der Zugriff auf die Werte erfolg über die den Index in den eckigen Klammern:
+```
+ let myArray[0] = "hello"; // wert "hello" an der Stelle 0 im Array
+```
+Bei Arrays kann man über das Attribut **length** abrufen, wie viele Werte in dem Array aktuell enthalten sind.
+Mit der Methode **.push()** lassen sich neue Werte an das Array hinten anhängen.
+
+
 ### Objekte
 Objekte sind noch etwas allgemeiner gefasst. Hier sind die Schlüssel, um auf die einzelnen Werte von dem Objekt zugreifen zu können nicht festgelegt auf durchnummerierte Zahlen, sondern können jeder Begriff sein.
 Objekt werden über die geschweiften Klammern definiert:
@@ -308,3 +332,19 @@ Schlüssel - Wert - Paare lassen sich einfach über den Punkt-Operator hinzufüg
  // oder über den Schlüssel als String ("") in eckigen Klammern hinzufügen:
  myObject["sex"] = "male";
 ```
+
+
+## Wiederhol-Schleifen
+Um Funktionen mehrfach auszuführen, gibt es unterschiedliche Schleifen Konstrukte (while-loop, do-while-loop, for-loop und for-each-loop).
+
+### WHILE-LOOP:
+Die while loop ist von der Syntax am einfachsten aufgebaut. 
+```
+  while (CONDITION) {
+    /* do something - Schleifenrumpf */
+  }
+```
+Die Bedingung wird überprüft - wenn die Bedingung true ist, wird der Schleifenrumpf ausgeführt.
+Anschließend wird die Bedingung erneut überprüft und der Schleifenrumpf erneut ausgeführt etc.
+Ist die Bedingung nicht erfüllt, wird die Wiederholung unterbrochen und das Programm nach der Schleife fortgesetzt.
+
