@@ -1,0 +1,23 @@
+html, body, p, h1, h2 {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid red;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 5px;
+}
+
+div {
+  width: 400px;
+  color: #000;
+}
+
+canvas {
+  display: block;
+}
