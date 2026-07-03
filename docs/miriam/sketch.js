@@ -170,6 +170,7 @@ function checkInteraction(px, py) {
 
       icon.sound.stop();
       icon.sound.play();
+      console.log(icon.sound);
 
       icon.sound.onended(() => {
 
