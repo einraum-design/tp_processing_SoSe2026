@@ -188,7 +188,7 @@ function checkInteraction(px, py) {
 }
 
 function mousePressed() {
-  checkInteraction(mouseX, mouseY);
+  //checkInteraction(mouseX, mouseY);
 }
 
 function touchStarted() {
