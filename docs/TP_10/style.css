@@ -5,6 +5,14 @@ html, body, p, h1, h2 {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+#navigation {
+  background-color: blueviolet;
+}
+
+#navigation a {
+  text-transform: uppercase;
+}
+
 #content {
   display: flex;
   flex-direction: row;
@@ -20,4 +28,23 @@ div {
 
 canvas {
   display: block;
+}
+
+/* Klassen -> im html class="mt-50" */
+.mt-50 {
+  margin-top: 50px;
+}
+
+/* pseudoklassen zb :visited oder :active */
+a:visited {
+  text-decoration: none;
+  border-bottom: none;
+  text-decoration-line: none;
+}
+
+a:hover {
+  text-decoration: none;
+  border-bottom: none;
+  text-decoration-line: none;
+  cursor: crosshair;
 }
