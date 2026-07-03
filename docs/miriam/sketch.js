@@ -168,6 +168,8 @@ function checkInteraction(px, py) {
       focusIndex = i;
       icon.state = "focus";
 
+      console.log(icon.sound);
+
       icon.sound.stop();
       icon.sound.play();
       console.log(icon.sound);
@@ -188,7 +190,7 @@ function checkInteraction(px, py) {
 }
 
 function mousePressed() {
-  //checkInteraction(mouseX, mouseY);
+  checkInteraction(mouseX, mouseY);
 }
 
 function touchStarted() {
