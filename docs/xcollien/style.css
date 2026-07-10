@@ -1,0 +1,231 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#000;
+    color:white;
+}
+
+/* HEADER */
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    padding:25px 60px;
+}
+
+.logo-area{
+    position:relative;
+    display:inline-block;
+}
+
+.logo{
+    font-size:60px;
+    font-weight:bold;
+    line-height:1;
+}
+
+.orange{
+    color:#f39c12;
+    font-size:58px; /* X kleiner gemacht */
+}
+
+.de-box{
+    position:absolute;
+    top:-18px;
+    right:-48px;
+    background:#f39c12;
+    color:white;
+    padding:4px 10px;
+    border-radius:5px;
+    font-size:14px;
+    font-weight:bold;
+}
+
+/* SEARCH */
+.search-box{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end; /* rechtsbündig */
+}
+
+.search-box label{
+    font-size:13px;
+    color:white;
+    margin-bottom:6px;
+    text-align:right;
+}
+
+.search{
+    width:360px;
+    padding:11px;
+    border:none;
+    border-radius:4px;
+    text-align:right;
+}
+
+/* NAV */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#222;
+    padding:16px 80px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    font-style:italic;
+    text-transform:uppercase;
+    letter-spacing:0.5px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#f39c12;
+}
+
+/* MAIN */
+main{
+    width:95%;
+    margin:auto;
+    margin-top:30px;
+}
+
+h1{
+    margin-bottom:25px;
+    font-size:28px;
+}
+
+/* BUTTONS */
+.buttons{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    margin-bottom:25px;
+}
+
+button{
+    background:#2d2d2d;
+    border:1px solid #f39c12;
+    color:white;
+    padding:13px;
+    border-radius:8px;
+    font-size:16.5px;
+    cursor:pointer;
+    transition:.3s;
+
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+button:hover{
+    background:#444;
+}
+
+/* GALLERY */
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:10px;
+}
+
+.card{
+    height:355px;
+    overflow:hidden;
+    border-radius:8px;
+    background:#111;
+}
+
+.card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center top;
+    transition:.3s;
+}
+
+.card:hover img{
+    filter:brightness(55%);
+}
+.card{
+    position: relative;
+}
+
+/* orange Klick-Flash */
+.card.flash::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(243, 156, 18, 0.45); /* dein Orange */
+    pointer-events: none;
+    animation: fadeOut 0.6s ease forwards;
+}
+.card.selected{
+    outline: 4px solid #f39c12;
+    outline-offset: -4px;
+    box-shadow: 0 0 18px rgba(243, 156, 18, 0.6);
+    transform: scale(1.02);
+}
+/* ========================= */
+/* Gesamte Übersicht Button */
+/* ========================= */
+
+.overview{
+    display:flex;
+    justify-content:flex-start;
+    margin-bottom:15px;
+}
+
+#showAll{
+    background:transparent;
+    color:#f39c12;
+    border:2px solid #f39c12;
+    padding:8px 18px;
+    border-radius:30px;
+    font-size:15px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+#showAll:hover{
+    background:#f39c12;
+    color:white;
+}
+
+/* ========================= */
+/* Aktiver Filter */
+/* ========================= */
+
+.filter-btn.active{
+    background:#f39c12;
+    color:white;
+    box-shadow:0 0 18px rgba(243,156,18,.6);
+    transform:scale(1.03);
+}
+
+/* ========================= */
+/* Karten-Auswahl */
+/* ========================= */
+
+.card.selected{
+    outline:4px solid #f39c12;
+    outline-offset:-4px;
+    box-shadow:0 0 18px rgba(243,156,18,.7);
+    transform:scale(1.02);
+}
+
+/* ========================= */
+/* Bilder etwas knackiger */
+/* ========================= */
+
+.card img{
+    filter:contrast(1.05) saturate(1.05) brightness(1.02);
+}
