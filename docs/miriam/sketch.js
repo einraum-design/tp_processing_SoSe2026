@@ -8,7 +8,8 @@ function preload() {
 
     icons.push({
       img: loadImage(`images/icon${i + 1}.png`),
-      sound: loadSound(`audio/audio${i + 1}.mp3`),
+      //sound: loadSound(`audio/audio${i + 1}.mp3`),
+      sound: new Pizzicato.Sound(`audio/audio${i + 1}.mp3`),
 
       x: random(width),
       y: random(height),
