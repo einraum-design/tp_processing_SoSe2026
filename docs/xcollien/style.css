@@ -136,10 +136,11 @@ button:hover{
     flex-wrap: wrap;
     /* grid-template-columns:repeat(5,1fr); */
     gap:10px;
+    justify-content: space-between;
 }
 
 .card{
-    width: 100px;
+    width: 130px;
     /* height:355px; */
     overflow:hidden;
     border-radius:8px;
