@@ -17,9 +17,9 @@ function setup() {
   createCanvas(displayWidth, displayHeight);
   angleMode(DEGREES);
 
-  videos[0] = createVideo("assets/4Demokratiep._Film.mp4");
-  videos[1] = createVideo("assets/4Plp._Film.mp4");
-  videos[2] = createVideo("assets/4Naehrstoffp._Film.mp4");
+  videos[0] = createVideo("assets/FINALERFILM1.mp4");
+  videos[1] = createVideo("assets/FINALERFILM3.mp4");
+  videos[2] = createVideo("assets/FINALERFILM4.mp4");
 
   for (let v of videos) {
     v.hide();
