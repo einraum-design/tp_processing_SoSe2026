@@ -175,7 +175,7 @@ function checkInteraction(px, py) {
       icon.sound.stop();
       icon.sound.play();
 
-      icon.sound.onended(() => {
+    /*  icon.sound.onended(() => {
 
         icon.state = "idle";
         focusIndex = -1;
@@ -183,7 +183,7 @@ function checkInteraction(px, py) {
         for (let ic of icons) {
           ic.targetAlpha = 255;
         }
-      });
+      });*/
 
       break;
     }
