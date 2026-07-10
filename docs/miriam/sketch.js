@@ -31,7 +31,7 @@ function preload() {
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  pixelDensity(1);
+  pixelDensity(0.5);
   imageMode(CENTER);
 }
 
@@ -173,7 +173,6 @@ function checkInteraction(px, py) {
 
       icon.sound.stop();
       icon.sound.play();
-      console.log(icon.sound);
 
       icon.sound.onended(() => {
 
