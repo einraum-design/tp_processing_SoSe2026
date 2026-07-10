@@ -8,8 +8,8 @@ function preload() {
 
     icons.push({
       img: loadImage(`images/icon${i + 1}.png`),
-      //sound: loadSound(`audio/audio${i + 1}.mp3`),
-      sound: new Pizzicato.Sound(`audio/audio${i + 1}.mp3`),
+      sound: loadSound(`audio/audio${i + 1}.mp3`),
+      // sound: new Pizzicato.Sound(`audio/audio${i + 1}.mp3`),
 
       x: random(width),
       y: random(height),
@@ -156,6 +156,7 @@ function draw() {
 }
 
 function checkInteraction(px, py) {
+  console.log(getAudioContext().state);
 
   if (focusIndex !== -1) return;
 
@@ -175,7 +176,7 @@ function checkInteraction(px, py) {
       icon.sound.stop();
       icon.sound.play();
 
-    /*  icon.sound.onended(() => {
+      icon.sound.onended(() => {
 
         icon.state = "idle";
         focusIndex = -1;
@@ -183,7 +184,7 @@ function checkInteraction(px, py) {
         for (let ic of icons) {
           ic.targetAlpha = 255;
         }
-      });*/
+      });
 
       break;
     }
