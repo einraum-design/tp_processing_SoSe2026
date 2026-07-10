@@ -3,31 +3,10 @@ const numIcons = 6;
 
 let focusIndex = -1;
 
+let firstTouch = false;
+
 function preload() {
-  for (let i = 0; i < numIcons; i++) {
 
-    icons.push({
-      img: loadImage(`images/icon${i + 1}.png`),
-      sound: loadSound(`audio/audio${i + 1}.mp3`),
-      // sound: new Pizzicato.Sound(`audio/audio${i + 1}.mp3`),
-
-      x: random(width),
-      y: random(height),
-
-      vx: random(-0.8, 0.8),
-      vy: random(-0.8, 0.8),
-
-      baseSize: 350,
-      size: 350,
-
-      alpha: 255,
-      targetAlpha: 255,
-
-      state: "idle",
-
-      wobbleT: random(1000)
-    });
-  }
 }
 
 function setup() {
@@ -39,77 +18,78 @@ function setup() {
 function draw() {
 
   background("#f0e7d2");
+  if (firstTouch) {
+    // =========================
+    // MINDESTENS 4 SICHTBAR
+    // =========================
+    let visibleCount = icons.filter(i => i.alpha > 50).length;
 
-  // =========================
-  // MINDESTENS 4 SICHTBAR
-  // =========================
-  let visibleCount = icons.filter(i => i.alpha > 50).length;
-
-  if (visibleCount < 4 && focusIndex === -1) {
-    for (let icon of icons) {
-      icon.targetAlpha = 255;
-    }
-  }
-
-  // =========================
-  // UPDATE ICONS
-  // =========================
-  for (let i = 0; i < icons.length; i++) {
-
-    let icon = icons[i];
-
-    // -------------------------
-    // FADE
-    // -------------------------
-    icon.alpha += (icon.targetAlpha - icon.alpha) * 0.05;
-
-    // -------------------------
-    // NORMAL MOVEMENT
-    // -------------------------
-    if (icon.state !== "focus") {
-      icon.x += icon.vx;
-      icon.y += icon.vy;
+    if (visibleCount < 4 && focusIndex === -1) {
+      for (let icon of icons) {
+        icon.targetAlpha = 255;
+      }
     }
 
-    // -------------------------
-    // BORDER COLLISION
-    // -------------------------
-    let r = icon.size / 2;
+    // =========================
+    // UPDATE ICONS
+    // =========================
+    for (let i = 0; i < icons.length; i++) {
 
-    if (icon.x < r) { icon.x = r; icon.vx *= -1; }
-    if (icon.x > width - r) { icon.x = width - r; icon.vx *= -1; }
-    if (icon.y < r) { icon.y = r; icon.vy *= -1; }
-    if (icon.y > height - r) { icon.y = height - r; icon.vy *= -1; }
+      let icon = icons[i];
 
-    // -------------------------
-    // FOCUS MODE
-    // -------------------------
-    if (icon.state === "focus") {
+      // -------------------------
+      // FADE
+      // -------------------------
+      icon.alpha += (icon.targetAlpha - icon.alpha) * 0.05;
 
-      let cx = width / 2;
-      let cy = height / 2;
+      // -------------------------
+      // NORMAL MOVEMENT
+      // -------------------------
+      if (icon.state !== "focus") {
+        icon.x += icon.vx;
+        icon.y += icon.vy;
+      }
 
-      icon.x += (cx - icon.x) * 0.08;
-      icon.y += (cy - icon.y) * 0.08;
+      // -------------------------
+      // BORDER COLLISION
+      // -------------------------
+      let r = icon.size / 2;
 
-      icon.wobbleT += 0.02;
+      if (icon.x < r) { icon.x = r; icon.vx *= -1; }
+      if (icon.x > width - r) { icon.x = width - r; icon.vx *= -1; }
+      if (icon.y < r) { icon.y = r; icon.vy *= -1; }
+      if (icon.y > height - r) { icon.y = height - r; icon.vy *= -1; }
 
-      icon.x += sin(icon.wobbleT) * 2;
-      icon.y += cos(icon.wobbleT) * 2;
+      // -------------------------
+      // FOCUS MODE
+      // -------------------------
+      if (icon.state === "focus") {
 
-      icon.size += (600 - icon.size) * 0.05;
+        let cx = width / 2;
+        let cy = height / 2;
 
-    } else {
-      icon.size += (350 - icon.size) * 0.05;
-    }
+        icon.x += (cx - icon.x) * 0.08;
+        icon.y += (cy - icon.y) * 0.08;
 
-    // -------------------------
-    // OTHER ICONS FADE OUT
-    // -------------------------
-    if (focusIndex !== -1 && i !== focusIndex) {
-      icon.targetAlpha = 40;
-    } else if (focusIndex === -1) {
-      icon.targetAlpha = 255;
+        icon.wobbleT += 0.02;
+
+        icon.x += sin(icon.wobbleT) * 2;
+        icon.y += cos(icon.wobbleT) * 2;
+
+        icon.size += (600 - icon.size) * 0.05;
+
+      } else {
+        icon.size += (350 - icon.size) * 0.05;
+      }
+
+      // -------------------------
+      // OTHER ICONS FADE OUT
+      // -------------------------
+      if (focusIndex !== -1 && i !== focusIndex) {
+        icon.targetAlpha = 40;
+      } else if (focusIndex === -1) {
+        icon.targetAlpha = 255;
+      }
     }
   }
 
@@ -156,7 +136,7 @@ function draw() {
 }
 
 function checkInteraction(px, py) {
-  console.log(getAudioContext().state);
+
 
   if (focusIndex !== -1) return;
 
@@ -172,9 +152,10 @@ function checkInteraction(px, py) {
       icon.state = "focus";
 
       console.log(icon.sound);
-
+      console.log(getAudioContext().state);
       icon.sound.stop();
       icon.sound.play();
+      console.log(getAudioContext().state);
 
       icon.sound.onended(() => {
 
@@ -192,11 +173,40 @@ function checkInteraction(px, py) {
 }
 
 function mousePressed() {
- // checkInteraction(mouseX, mouseY);
+  // checkInteraction(mouseX, mouseY);
 }
 
 function touchStarted() {
-  checkInteraction(mouseX, mouseY);
+  if (firstTouch == false) {
+    firstTouch = true;
+
+    for (let i = 0; i < numIcons; i++) {
+
+      icons.push({
+        img: loadImage(`images/icon${i + 1}.png`),
+        sound: loadSound(`audio/audio${i + 1}.mp3`),
+        // sound: new Pizzicato.Sound(`audio/audio${i + 1}.mp3`),
+
+        x: random(width),
+        y: random(height),
+
+        vx: random(-0.8, 0.8),
+        vy: random(-0.8, 0.8),
+
+        baseSize: 350,
+        size: 350,
+
+        alpha: 255,
+        targetAlpha: 255,
+
+        state: "idle",
+
+        wobbleT: random(1000)
+      });
+    }
+  } else {
+    checkInteraction(mouseX, mouseY);
+  }
   return false;
 }
 
