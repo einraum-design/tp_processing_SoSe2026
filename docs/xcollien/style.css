@@ -85,6 +85,8 @@ nav a{
     text-transform:uppercase;
     letter-spacing:0.5px;
     transition:.3s;
+    margin-bottom: 10px;
+    width: 200px;
 }
 
 nav a:hover{
