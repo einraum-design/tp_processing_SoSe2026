@@ -11,7 +11,7 @@ function preload() {
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  pixelDensity(0.5);
+  pixelDensity(1);
   imageMode(CENTER);
 }
 
@@ -173,7 +173,36 @@ function checkInteraction(px, py) {
 }
 
 function mousePressed() {
-  // checkInteraction(mouseX, mouseY);
+  if (firstTouch == false) {
+    firstTouch = true;
+
+    for (let i = 0; i < numIcons; i++) {
+
+      icons.push({
+        img: loadImage(`images/icon${i + 1}.png`),
+        sound: loadSound(`audio/audio${i + 1}.mp3`),
+        // sound: new Pizzicato.Sound(`audio/audio${i + 1}.mp3`),
+
+        x: random(width),
+        y: random(height),
+
+        vx: random(-0.8, 0.8),
+        vy: random(-0.8, 0.8),
+
+        baseSize: 350,
+        size: 350,
+
+        alpha: 255,
+        targetAlpha: 255,
+
+        state: "idle",
+
+        wobbleT: random(1000)
+      });
+    }
+  } else {
+    checkInteraction(mouseX, mouseY);
+  }
 }
 
 function touchStarted() {
