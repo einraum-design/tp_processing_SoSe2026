@@ -7,7 +7,7 @@ const showAll = document.getElementById("showAll");
 const bilder = [];
 
 for (let i = 1; i <= 25; i++) {
-    bilder.push(`bilder/frau${i}.jpg`);
+    bilder.push(`Bilder/frau${i}.jpg`);
 }
 
 // Kategorien (jeweils 10 Bilder)
