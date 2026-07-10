@@ -137,7 +137,8 @@ button:hover{
 }
 
 .card{
-    height:355px;
+    width: 100px;
+    /* height:355px; */
     overflow:hidden;
     border-radius:8px;
     background:#111;
