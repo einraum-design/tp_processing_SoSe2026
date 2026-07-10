@@ -73,8 +73,9 @@ function draw() {
   // TEXT PHASE
   if (showText) {
     fill(255);
-    loadFont("assets/KleeOne-SemiBold.ttf")
-    text("Pflanze einen Samen", width / 2, height / 2);
+    textAlign(CENTER,CENTER);
+    text("Pflanze einen Samen", 0, 0);
+    //text("Pflanze einen Samen", width / 2, height / 2);
   }
 }
 
