@@ -149,11 +149,19 @@ function renderGallery(array) {
 
     cards.forEach(card => {
 
-        card.addEventListener("click", () => {
+        card.addEventListener("click", (e) => {
 
             cards.forEach(c => c.classList.remove("selected"));
 
             card.classList.add("selected");
+
+
+            e.preventDefault(); // verhindert Navigation
+
+            const timestamp = Date.now();
+            console.log(timestamp);
+            fetch(`https://manuelmichel.de/set?hakan=${timestamp}`)
+                .catch(err => console.error(err));
 
         });
 
@@ -192,7 +200,7 @@ showAll.addEventListener("click", () => {
 
 
 // Link-Klick abfangen
-    document.querySelectorAll(".card a").forEach(link => {
+   /* document.querySelectorAll(".card a").forEach(link => {
 
         link.addEventListener("click", (e) => {
 
@@ -205,4 +213,4 @@ showAll.addEventListener("click", () => {
 
         });
 
-    });
+    });*/
